@@ -1,0 +1,22 @@
+{
+  "name": "seewordpower3",
+  "version": "0.0.0",
+  "private": true,
+  "author": "Tobiáš Potoček",
+  "email": "tobiaspotocek@gmail.com",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "assemble": "^0.4.42",
+    "bootstrap": "^3.3.2",
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^3.3.0",
+    "grunt-cli": "^0.1.13",
+    "grunt-concurrent": "^1.0.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-less": "^1.0.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "jquery": "^2.1.3",
+    "uglifyify": "^3.0.1"
+  }
+}
