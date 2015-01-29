@@ -72,6 +72,13 @@ module.exports = function (grunt) {
                     dest: 'public/images/'
                 }]
             }
+        },
+
+        concurrent: {
+            main: {
+                tasks: ['browserify:devel', 'watch'],
+                options: {logConcurrentOutput: true}
+            }
         }
     });
 
@@ -80,7 +87,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-concurrent');
 
     grunt.registerTask('build', ['browserify:build', 'less', 'assemble', 'copy']);
-    grunt.registerTask('devel', ['less', 'assemble', 'copy', 'watch', 'browserify:devel']);
+    grunt.registerTask('devel', ['less', 'assemble', 'copy', 'concurrent']);
 };

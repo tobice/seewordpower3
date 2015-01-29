@@ -1,5 +1,140 @@
+@import url(http://fonts.googleapis.com/css?family=Forum&subset=latin,latin-ext);
 @import "bootstrap";
 
-* {
+@font-size-base: 15px;
+@font-family-sans-serif: "Forum";
+@navbar-height: 120px;
+@navbar-default-bg: #FFFFFF;
 
+body {
+  padding-top: @navbar-height;
 }
+
+/** With separator (nice separator in the middle) */
+.with-separator {
+  background: url(../images/separator.svg) no-repeat center center;
+  background-size: auto 50%;
+}
+
+/** Navbar */
+.navbar {
+  border-bottom: 2px solid black;
+  background-color: white;
+}
+.navbar-header {
+  width: 100%;
+}
+.navbar-brand {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.navbar-brand img {
+  height: @navbar-height - 50;
+}
+.navbar-menu-toggle {
+  background: none;
+  border: 0;
+  height: @navbar-height;
+  float: right;
+}
+.navbar-menu-toggle img {
+  height: @navbar-height - 85;
+}
+
+/** JUMBOTRONS */
+.jumbotron.no-margin {
+  margin-bottom: 0;
+}
+
+/** Greedy Jumbotron (that covers the viewport */
+@greedy-jumbotron-min-height: 550px;
+
+.greedy-jumbotron {
+  height: 100vh;
+  min-height: @greedy-jumbotron-min-height;
+  margin-top: -@navbar-height;
+  padding-top: 0;
+  padding-bottom: 0;
+  box-sizing: border-box;
+}
+.greedy-jumbotron-column {
+  height: 100vh;
+  min-height: @greedy-jumbotron-min-height;
+  padding-top: @navbar-height;
+  box-sizing: border-box;
+}
+
+/** Jumbotron black */
+.jumbotron-black {
+  background-color: black;
+  color: white;
+}
+.jumbotron-black h2 {
+  text-transform: uppercase;
+  font-size: 50px;
+}
+.jumbotron-black p {
+  font-size: @font-size-base * 1.6;
+}
+
+/** Jumbotron Matty */
+.jumbotron-matty {
+  background-color: #f6f6f6;
+}
+.jumbotron-matty .greedy-jumbotron-column {
+  display: table;
+}
+.matty-heading {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 70px;
+  text-transform: uppercase;
+}
+.matty-heading .with-separator {
+  background-size: auto 80%;
+  background-position: left center;
+  margin-left: -40px;
+  padding-left: 40px;
+}
+.matty-image-column {
+  padding-top: @navbar-height + 20px; // add space between the navbar and Matty's face
+}
+.matty-image {
+  margin-top: 20px;
+  display: table-cell;
+  background: transparent url(../images/matty.jpg) no-repeat center bottom;
+  background-size: contain;
+  position: relative;
+}
+.matty-image-blink-left, .matty-image-blink-right {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.matty-image-blink-left {
+  background: transparent url(../images/matty-blink-left.gif) no-repeat center bottom;
+  background-size: contain;
+}
+.matty-image-blink-right {
+  background: transparent url(../images/matty-blink-right.gif) no-repeat center bottom;
+  background-size: contain;
+}
+.matty-image-holder {
+  position: absolute;
+  bottom: 0;
+  // center it
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.matty-image-face {
+  // values based on the actual image layout
+  width: 44%;
+  height: 56%;
+  margin-left: 31%;
+}
+

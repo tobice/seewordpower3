@@ -7,6 +7,23 @@
 	<link href="{{assets}}styles/styles.css" rel="stylesheet"/>
 </head>
 <body>
+	<nav class="navbar navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button aria-controls="navbar" aria-expanded="false" data-target="#navbar"
+						data-toggle="collapse" class="navbar-menu-toggle" type="button">
+					<span class="sr-only">Toggle navigation</span>
+					<img src="{{assets}}images/menu.svg">
+				</button>
+				<a href="#" class="navbar-brand">
+					<img src="{{assets}}images/logo.svg">
+				</a>
+			</div>
+			<div class="navbar-collapse collapse" id="navbar">
+			</div>
+			<!--/.navbar-collapse -->
+		</div>
+	</nav>
 	{{> body }}
 	<script src="{{assets}}scripts/scripts.js"></script>
 </body>
