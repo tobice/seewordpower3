@@ -8,7 +8,8 @@ module.exports = function (grunt) {
                 assets: 'public/',
                 partials: ['templates/includes/**/*.hbs'],
                 layout: ['templates/layouts/default.hbs'],
-                flatten: true
+                flatten: true,
+                helpers: ['handlebars-helper-lorem']
             },
             site: {
                 src: ['templates/*.hbs'],
