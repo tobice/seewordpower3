@@ -135,7 +135,11 @@ a {
   vertical-align: middle;
   font-size: 70px;
   text-transform: uppercase;
-  color: black;
+}
+@media (max-width: @screen-xs-max) {
+  .matty-heading {
+    font-size: 20px;
+  }
 }
 .matty-heading .with-separator {
   background-size: auto 80%;
