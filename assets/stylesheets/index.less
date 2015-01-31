@@ -1,18 +1,38 @@
 @import url(http://fonts.googleapis.com/css?family=Forum&subset=latin,latin-ext);
 @import "bootstrap";
 
-@font-size-base: 15px;
+@font-size-base: 18px;
 @font-family-sans-serif: "Forum";
 @navbar-height: 120px;
 @navbar-default-bg: #FFFFFF;
+@input-border-radius: 0;
+
+.placeholder(@color: #ccc) {
+  input::-webkit-input-placeholder {
+    color: @color;
+  }
+  input:-moz-placeholder {
+    color: @color;
+  }
+  textarea::-webkit-input-placeholder {
+    color: @color;
+  }
+  textarea:-moz-placeholder {
+    color: @color;
+  }
+}
 
 body {
   padding-top: @navbar-height;
 }
+h2 {
+  text-transform: uppercase;
+  font-size: 50px;
+}
 
 /** With separator (nice separator in the middle) */
 .with-separator {
-  background: url(../images/separator.svg) no-repeat center center;
+  background: url(../images/separator-black.svg) no-repeat center center;
   background-size: auto 50%;
 }
 
@@ -69,17 +89,13 @@ body {
   background-color: black;
   color: white;
 }
-.jumbotron-black h2 {
-  text-transform: uppercase;
-  font-size: 50px;
-}
 .jumbotron-black p {
-  font-size: @font-size-base * 1.6;
+  font-size: @font-size-base * 1.4;
 }
 
 /** Jumbotron Matty */
 .jumbotron-matty {
-  background-color: #f6f6f6;
+  background-color: #ffffff;
 }
 .jumbotron-matty .greedy-jumbotron-column {
   display: table;
@@ -89,6 +105,7 @@ body {
   vertical-align: middle;
   font-size: 70px;
   text-transform: uppercase;
+  color: black;
 }
 .matty-heading .with-separator {
   background-size: auto 80%;
@@ -136,5 +153,49 @@ body {
   width: 44%;
   height: 56%;
   margin-left: 31%;
+}
+
+/** Client banners */
+.client-banner {
+  margin: 15px 0;
+  display: table;
+  height: 220px;
+  width: 100%;
+  color: black;
+  text-decoration: none;
+  font-size: 30px;
+  background: white url(../images/separator-black.svg) no-repeat center center;
+  background-size: auto 70%;
+}
+.client-banner:hover {
+  color: white;
+  text-decoration: none;
+  background: #de342e url(../images/separator-white.svg) no-repeat center center;
+  background-size: auto 70%;
+}
+.client-banner-logo, .client-banner-words {
+  box-sizing: border-box;
+  width: 50%;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  padding: 15%;
+}
+.client-banner-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+/** Contact form */
+.contact-form .form-control {
+  .placeholder(white);
+  border: 2px solid white;
+  background-color: black;
+  color: white;
+}
+.contact-form button {
+  width: 100%;
+  display: block;
+  border-radius: 0;
 }
 

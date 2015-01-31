@@ -7,7 +7,9 @@ require('bootstrap/js/transition');
 require('bootstrap/js/collapse');
 
 var mattyImage = require('./mattyImage');
+var clientBanners = require('./clientBanners');
 
 $(document).ready(function () {
     mattyImage.init();
+    clientBanners.init();
 });
