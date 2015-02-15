@@ -34,10 +34,4 @@ function clientBanner() {
     update();
 }
 
-var clientBanners = {
-    init: function () {
-        $('.client-banner').each(clientBanner);
-    }
-};
-
-module.exports = clientBanners;
+module.exports = clientBanner;

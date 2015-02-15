@@ -7,9 +7,13 @@ window.$ = window.jQuery = $;
 require('bootstrap/js/collapse');
 
 var mattyImage = require('./mattyImage');
-var clientBanners = require('./clientBanners');
+var clientBanner = require('./clientBanner');
+var flexibleHeader = require('./flexibleHeader');
+var greedyJumbotron = require('./greedyJumbotron');
 
 $(document).ready(function () {
     mattyImage.init();
-    clientBanners.init();
+    $('.client-banner').each(clientBanner);
+    $('nav.navbar').each(flexibleHeader);
+    $('.greedy-jumbotron').each(greedyJumbotron);
 });

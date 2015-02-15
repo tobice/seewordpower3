@@ -2,20 +2,23 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name=viewport content="width=device-width, height=device-height, initial-scale=1">
 	<title>
 		{{default title page.basename}}
 	</title>
 	<link href="{{assets}}styles/styles.css" rel="stylesheet"/>
 </head>
 <body>
+	<div class="size-indicator"></div>
 	<nav class="navbar navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
-				<button aria-controls="navbar" aria-expanded="false" data-target="#navbar"
-						data-toggle="collapse" class="navbar-menu-toggle" type="button">
+				<a href="javascript: return false;" aria-controls="navbar"
+				   		aria-expanded="false" data-target="#navbar"
+						data-toggle="collapse" class="navbar-menu-toggle">
 					<span class="sr-only">Toggle navigation</span>
 					<img src="{{assets}}images/menu.svg">
-				</button>
+				</a>
 				<a href="#" class="navbar-brand">
 					<img src="{{assets}}images/logo.svg">
 				</a>

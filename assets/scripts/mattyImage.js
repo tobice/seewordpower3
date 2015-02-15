@@ -5,7 +5,7 @@ var image; /** DIV with the image as the background */
 var holder; /** DIV that will mimic the image size */
 var face; /** DIV covering the face in the picture */
 var left, right; /** DIVs for left and right eye lid */
-var peekInterval; /** interval object for peeking when the eyes are close */
+var opened = true; /** Are eyes currently opened? */
 
 /**
  * Update holder's size so it would match the size of the underlying image. (We're simulating
@@ -25,15 +25,15 @@ function updateSize() {
 }
 
 function openEyes() {
+    opened = true;
     openLeft();
     openRight();
-    clearInterval(peekInterval);
 }
 
 function closeEyes() {
+    opened = false;
     closeLeft();
     closeRight();
-    peekInterval = setInterval(peek, 2000);
 }
 
 function openLeft() { left.hide(); }
@@ -42,8 +42,14 @@ function openRight() { right.hide(); }
 function closeRight() { right.show(); }
 
 function peek() {
-    openLeft();
-    setTimeout(closeLeft, 200);
+    if (!opened) {
+        openLeft();
+        setTimeout(function () {
+            if (!opened) {
+                closeLeft();
+            }
+        }, 300);
+    }
 }
 
 // public methods
@@ -60,6 +66,8 @@ var mattyImage = {
 
         updateSize();
         $(window).resize(updateSize);
+
+        setInterval(peek, 2000);
     }
 };
 
