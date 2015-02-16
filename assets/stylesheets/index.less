@@ -10,7 +10,7 @@
 @navbar-default-bg: #FFFFFF;
 @link-color: #000000;
 @input-border-radius: 0;
-@screen-md: 960px;
+@screen-md: 960px; // include Nexus 7 landscape
 
 /** Input Placeholder */
 .placeholder(@color: #ccc) {
@@ -97,35 +97,46 @@ a {
 .navbar-header {
   float: none;
 }
-.navbar-brand {
+.navbar-button {
+  .navbar-brand;
   height: @navbar-height;
   padding-top: 0;
   padding-bottom: 0;
 }
-.navbar-brand:focus {
+.navbar-button:focus {
   outline: 0;
 }
-.navbar-brand::before { // workaround for vertically centered logo
+.navbar-button::before { // workaround for vertically centered logo
   content: "";
   display: block;
+}
+.navbar-button img {
+}
+.navbar-button-logo {
+  float: left;
+}
+.navbar-button-logo::before {
   height: 20%;
 }
-.navbar-brand img {
+.navbar-button-logo img {
   height: 60%;
 }
-.navbar-menu-toggle {
-  .navbar-brand;
+.navbar-button-toggle {
   float: right;
 }
-.navbar-menu-toggle:focus {
-  outline: 0;
-}
-.navbar-menu-toggle::before {
-  content: "";
-  display: block;
+.navbar-button-toggle::before {
   height: 35%;
 }
-.navbar-menu-toggle img {
+.navbar-button-toggle img {
+  height: 30%;
+}
+.navbar-button-lang {
+  float: right;
+}
+.navbar-button-lang::before {
+  height: 35%;
+}
+.navbar-button-lang img {
   height: 30%;
 }
 
@@ -178,7 +189,7 @@ a {
 @media (max-width: @screen-sm-max) {
   .greedy-jumbotron {
     padding-top: @navbar-height;
-    min-height: 0;
+    min-height: 480px;
   }
 
   .greedy-jumbotron-column {

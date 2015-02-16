@@ -11,9 +11,9 @@ function flexibleHeader() {
     var nav = $(this);
 
     function setHeight(height) {
-        var elements = nav.find('.navbar-brand, .navbar-menu-toggle');
-        elements.css('height', height + 'px');
         nav.css('min-height', height + 'px');
+        nav.find('.navbar-button').css('height', height + 'px')
+            .find('img').hide().show(0); // ugly trick to force Chrome to recalculate image width
     }
 
     function update() {
