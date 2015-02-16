@@ -323,12 +323,30 @@ a {
   font-size: 30px;
   background: white url(../images/separator-black.svg) no-repeat center center;
   background-size: auto 70%;
+
+  img {
+    width: 50%;
+    height: 50%;
+  }
+  .white {
+    display: none;
+  }
+  .black {
+    display: inline-block;
+  }
 }
-.client-banner:hover {
+.client-banner:hover, .client-banner:active {
   color: white;
   text-decoration: none;
-  background: #de342e url(../images/separator-white.svg) no-repeat center center;
+  background: transparent url(../images/separator-white.svg) no-repeat center center;
   background-size: auto 70%;
+
+  .white {
+    display: inline-block;
+  }
+  .black {
+    display: none;
+  }
 }
 .client-banner-logo, .client-banner-words {
   width: 50%;
@@ -338,14 +356,10 @@ a {
   text-align: center;
   vertical-align: middle;
 }
-
 .client-banner-words {
   padding: 10%;
 }
-.client-banner-logo img {
-  width: 40%;
-  height: 40%;
-}
+
 
 /** Contact form */
 .contact-form .form-control {

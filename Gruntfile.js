@@ -6,10 +6,10 @@ module.exports = function (grunt) {
         assemble: {
             options: {
                 assets: 'public/',
-                partials: ['templates/includes/**/*.hbs'],
+                partials: ['templates/partials/**/*.hbs'],
                 layout: ['templates/layouts/default.hbs'],
                 flatten: true,
-                helpers: ['handlebars-helper-lorem']
+                helpers: ['./dev/helpers/withHash.js']
             },
             site: {
                 src: ['templates/*.hbs'],

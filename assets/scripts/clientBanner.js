@@ -17,16 +17,18 @@ function clientBanner() {
         .mouseup(function () { active = false; update() });
 
     function preloadActiveImage() {
-        $('<img/>')[0].src = activeSrc;
+        // $('<img/>')[0].src = activeSrc;
     }
 
     function update() {
         if (active) {
             banner.css('background-color', activeColor);
-            image.attr('src', activeSrc);
+            banner.find('img.white').show();
+            banner.find('img.black').hide();
         } else {
             banner.css('background-color', 'white');
-            image.attr('src', normalSrc);
+            banner.find('img.white').hide();
+            banner.find('img.black').show();
         }
     }
 

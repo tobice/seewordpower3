@@ -13,7 +13,7 @@ var greedyJumbotron = require('./greedyJumbotron');
 
 $(document).ready(function () {
     mattyImage.init();
-    $('.client-banner').each(clientBanner);
+    // $('.client-banner').each(clientBanner);
     $('nav.navbar').each(flexibleHeader);
     $('.greedy-jumbotron').each(greedyJumbotron);
 });
