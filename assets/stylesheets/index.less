@@ -3,6 +3,7 @@
 
 @font-size-base: 20px;
 @font-family-sans-serif: "Forum";
+@line-height-base: 1.6;
 @navbar-height: 120px;
 @navbar-default-bg: #FFFFFF;
 @link-color: #000000;
@@ -25,14 +26,35 @@
   }
 }
 
+/** Common styles */
 body {
   padding-top: @navbar-height;
 }
 h1, h2, h3 {
   text-transform: uppercase;
+  text-align: center;
 }
 a {
   text-decoration: underline;
+}
+p {
+  text-align: justify;
+}
+.cv-button {
+  border: 1px solid black;
+  display: block;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+  width: 80%;
+  max-width: 600px;
+  margin: 30px auto;
+}
+.cv-button:hover {
+  background-color: black;
+  color: white;
+  text-decoration: none;
 }
 
 /** Helper size indicator */
@@ -106,65 +128,69 @@ a {
   content: "";
   display: block;
 }
-.navbar-button img {
-}
 .navbar-button-logo {
   float: left;
-}
-.navbar-button-logo::before {
-  height: 20%;
-}
-.navbar-button-logo img {
-  height: 60%;
+
+  &::before {
+    height: 20%;
+  }
+  img {
+    height: 60%;
+  }
 }
 .navbar-button-toggle {
   float: right;
-}
-.navbar-button-toggle::before {
-  height: 35%;
-}
-.navbar-button-toggle img {
-  height: 30%;
+
+  &::before {
+    height: 35%;
+  }
+  img {
+    height: 30%;
+  }
 }
 .navbar-button-lang {
   float: right;
-}
-.navbar-button-lang::before {
-  height: 35%;
-}
-.navbar-button-lang img {
-  height: 30%;
-}
 
+  &::before {
+    height: 35%;
+  }
+  img {
+    height: 30%;
+  }
+}
 .mynavbar {
   padding: 0;
   margin: 0;
   clear: both;
-}
-.mynavbar li {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-.mynavbar a {
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  padding: 10px 0;
-}
-.mynavbar a:hover, .mynavbar a:active, .mynavbar a:focus {
-  background-color: #f3f3f3;
+
+  li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 0;
+  }
+  a:hover, a:active, a:focus {
+    background-color: #f3f3f3;
+  }
 }
 
 /** JUMBOTRONS */
 .jumbotron {
   color: black;
-}
-.jumbotron.no-margin {
-  margin-bottom: 0;
-}
-.jumbotron p {
-  font-size: 1.01 * @font-size-base;
+  background-color: white;
+
+  p {
+    font-size: 1.01 * @font-size-base;
+  }
+
+  &.no-margin {
+    margin-bottom: 0;
+  }
 }
 
 /** Greedy Jumbotron (that covers whole viewport) */
@@ -178,9 +204,10 @@ a {
   padding-top: 0;
   padding-bottom: 0;
   box-sizing: border-box;
-}
-.greedy-jumbotron .container, .greedy-jumbotron .row {
-  height: 100%;
+
+  .container, .row {
+    height: 100%;
+  }
 }
 .greedy-jumbotron-column {
   height: 100%;
@@ -204,12 +231,13 @@ a {
 }
 
 /** Jumbotron black */
-.jumbotron-black {
+.jumbotron-inverse {
   background-color: black;
   color: white;
-}
-.jumbotron-black a  {
-  color: white;
+
+  a {
+    color: white;
+  }
 }
 
 /** Jumbotron Matty */
@@ -226,15 +254,16 @@ a {
   vertical-align: middle;
   font-size: 60px;
   text-transform: uppercase;
-}
-.matty-heading .with-separator {
-  background-size: auto 80%;
-  background-position: left center;
-  margin-left: -40px;
-  padding-left: 40px;
-  z-index: 1; // put the separator in front of mattys face
-  position: relative;
-  width: 6em;
+
+  .with-separator {
+    background-size: auto 80%;
+    background-position: left center;
+    margin-left: -40px;
+    padding-left: 40px;
+    z-index: 1; // put the separator in front of mattys face
+    position: relative;
+    width: 6em;
+  }
 }
 .matty-image-column {
   display: table;
@@ -287,13 +316,14 @@ a {
   }
   .matty-heading {
     text-align: center;
-  }
-  .matty-heading .with-separator {
-    background: url(../images/separator-horizontal-black.svg) no-repeat bottom center;
-    margin: 0;
-    padding: 0 0 1em;
-    background-size: 30% auto;
-    width: 100%;
+
+    .with-separator {
+      background: url(../images/separator-horizontal-black.svg) no-repeat bottom center;
+      margin: 0;
+      padding: 0 0 1em;
+      background-size: 30% auto;
+      width: 100%;
+    }
   }
   .matty-image-column {
     padding-top: 0;
@@ -315,8 +345,45 @@ a {
   }
 }
 
+/** Jumbotron Matty inverse */
+.jumbotron-matty-inverse {
+  background-color: #000000;
+
+  .matty-heading {
+    color: white;
+  }
+  .matty-heading .with-separator {
+    background-image: url(../images/separator-white.svg);
+  }
+  .matty-image {
+    background: transparent url(../images/matty-inverse.jpg) no-repeat center bottom;
+    background-size: contain;
+  }
+  .matty-image-blink-left {
+    background: transparent url(../images/matty-inverse-blink-left.gif) no-repeat center bottom;
+    background-size: contain;
+  }
+  .matty-image-blink-right {
+    background: transparent url(../images/matty-inverse-blink-right.gif) no-repeat center bottom;
+    background-size: contain;
+  }
+  .matty-image-face {
+    // values based on the actual image layout
+    width: 40%;
+    height: 53%;
+    margin-left: 31%;
+    margin-top: 5%;
+  }
+  @media (max-width: @screen-sm-max) {
+    .matty-heading .with-separator {
+      background: url(../images/separator-horizontal-white.svg) no-repeat bottom center;
+    }
+  }
+}
+
 /** Client banners */
 .client-banner {
+  // border: 1px solid black;
   margin: 15px 0;
   display: table;
   height: 220px;
@@ -342,18 +409,18 @@ a {
   .black {
     display: inline-block;
   }
-}
-.client-banner:hover, .client-banner:active {
-  color: white;
-  text-decoration: none;
-  background: transparent url(../images/separator-white.svg) no-repeat center center;
-  background-size: auto 70%;
+  &:hover, &:active {
+    color: white;
+    text-decoration: none;
+    background: transparent url(../images/separator-white.svg) no-repeat center center;
+    background-size: auto 70%;
 
-  .white {
-    display: inline-block;
-  }
-  .black {
-    display: none;
+    .white {
+      display: inline-block;
+    }
+    .black {
+      display: none;
+    }
   }
 }
 .client-banner-logo, .client-banner-words {
@@ -363,29 +430,106 @@ a {
   vertical-align: middle;
 }
 
+/** Mind challenges (boxes) */
+.mind-challenge {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  text-align: center;
+
+  p {
+    text-align: center;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .mind-challenge-drawing {
+    width: 100%;
+    margin-top: 30px;
+
+    img {
+      width: 100%;
+      height: auto;
+      max-width: 220px;
+    }
+  }
+}
+
+/** Timeline */
+.timeline-item {
+  margin-top: 60px;
+  margin-bottom: 60px;
+
+  h4 {
+    margin-top: 0;
+  }
+  .header {
+    .clearfix;
+    margin-bottom: 30px;
+
+    .image {
+      width: 50%;
+      height: 120px;
+      float: left;
+      display: table-cell;
+      vertical-align: middle;
+
+      img {
+        max-width: 120px;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .date {
+      width: 50%;
+      float: right;
+
+      > div {
+        max-width: 120px;
+        height: 120px;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 20px;
+        font-size: @font-size-base * 1.1;
+        border: 1px solid black;
+
+        @media (max-width: @screen-sm-max) {
+          float: right;
+        }
+      }
+    }
+  }
+}
+
 /** Contact form */
 .contact-form {
   padding-top: 15px;
   padding-bottom: 30px;
-}
-.contact-form .form-control {
-  .placeholder(white);
-  border: 2px solid white;
-  background-color: black;
-  color: white;
-}
-.contact-form button {
-  width: 100%;
-  display: block;
-  border-radius: 0;
+
+  .form-control {
+    .placeholder(white);
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+  }
+  button {
+    width: 100%;
+    display: block;
+    border-radius: 0;
+  }
 }
 
 /** Footer */
 .footer {
   margin-top: 30px;
-}
-.footer .row {
-  margin-top: 30px;
+
+  .row {
+    margin-top: 30px;
+  }
+  .list-inline li {
+    margin: 10px 0;
+  }
 }
 .footer-separator {
   height: 15px;
@@ -407,9 +551,6 @@ a {
 p.footer-info {
   text-align: center;
   font-size: @font-size-base;
-}
-.footer .list-inline li {
-  margin: 10px 0;
 }
 
 /** Highlight components */
