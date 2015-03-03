@@ -64,51 +64,33 @@ title: See Word Power 3
 	<div class="container">
 		<h2>Čím provokuju svoje myšlenky</h2>
 		<div class="row">
-			<div class="col-sm-6 mind-challenge">
-				<p>V kuchyni jsem často víc než u počítače</p>
-				<div class="mind-challenge-drawing">
-					<img src="{{assets}}images/drawing-pan.svg">
-				</div>
-			</div>
+			{{#withHash image="drawing-pan" label="V kuchyni jsem často víc než u počítače"}}
+				{{> mind-challenge}}
+			{{/withHash}}
 
-			<div class="col-sm-6 mind-challenge">
-				<p>Dřív, než si splním svoje sny, nechám si je zdát</p>
-				<div class="mind-challenge-drawing">
-					<img src="{{assets}}images/drawing-bed.svg">
-				</div>
-			</div>
+			{{#withHash image="drawing-bed" label="Dřív, než si splním svoje sny, nechám si je zdát"}}
+				{{> mind-challenge}}
+			{{/withHash}}
 		</div>
 
 		<div class="row">
-			<div class="col-sm-6 mind-challenge">
-				<p>Koukali byste, co mi ve sprše teče z hlavy za nápady.</p>
-				<div class="mind-challenge-drawing">
-					<img src="{{assets}}images/drawing-shower.svg">
-				</div>
-			</div>
+			{{#withHash image="drawing-shower" label="Koukali byste, co mi ve sprše teče z hlavy za nápady."}}
+				{{> mind-challenge}}
+			{{/withHash}}
 
-			<div class="col-sm-6 mind-challenge">
-				<p>Auto nemám. Stačí mi tramka.</p>
-				<div class="mind-challenge-drawing">
-					<img src="{{assets}}images/drawing-tram.svg">
-				</div>
-			</div>
+			{{#withHash image="drawing-tram" label="Auto nemám. Stačí mi tramka"}}
+				{{> mind-challenge}}
+			{{/withHash}}
 		</div>
 
 		<div class="row">
-			<div class="col-sm-6 mind-challenge">
-				<p>Ahoj, jsem Matouš a jsem závislák na filmech.</p>
-				<div class="mind-challenge-drawing">
-					<img src="{{assets}}images/drawing-movie.svg">
-				</div>
-			</div>
+			{{#withHash image="drawing-movie" label="Ahoj, jsem Matouš a jsem závislák na filmech."}}
+				{{> mind-challenge}}
+			{{/withHash}}
 
-			<div class="col-sm-6 mind-challenge">
-				<p>Na fitko moc nejsem. Ale i tak rád protahuju svoje křivky.</p>
-				<div class="mind-challenge-drawing">
-					<img src="{{assets}}images/drawing-excercise.svg">
-				</div>
-			</div>
+			{{#withHash image="drawing-excercise" label="Na fitko moc nejsem. Ale i tak rád protahuju svoje křivky."}}
+				{{> mind-challenge}}
+			{{/withHash}}
 		</div>
 	</div>
 </div>
