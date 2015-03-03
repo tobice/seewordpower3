@@ -33,28 +33,46 @@ body {
 h1, h2, h3 {
   text-transform: uppercase;
   text-align: center;
+
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
 }
 a {
   text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 p {
   text-align: justify;
 }
-.cv-button {
+.button {
   border: 1px solid black;
   display: block;
   text-transform: uppercase;
   text-align: center;
   text-decoration: none;
   padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+
+  &:hover {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.cv-button {
+  .button;
   width: 80%;
   max-width: 600px;
   margin: 30px auto;
-}
-.cv-button:hover {
-  background-color: black;
-  color: white;
-  text-decoration: none;
 }
 
 /** Helper size indicator */
@@ -199,7 +217,7 @@ p {
 .greedy-jumbotron {
   height: 100vh;
   min-height: @greedy-jumbotron-min-height;
-  max-height: 1000px; /* for extremely large displays, like iMac */
+  max-height: 1080px; /* for extremely large displays, like iMac */
   margin-top: -@navbar-height;
   padding-top: 0;
   padding-bottom: 0;
@@ -214,6 +232,32 @@ p {
   min-height: @greedy-jumbotron-min-height;
   padding-top: @navbar-height;
   box-sizing: border-box;
+
+  &.single-heading {
+    height: 100%;
+    width: 100%;
+    display: table;
+
+    .single-heading-cell {
+      display: table-cell;
+      vertical-align: middle;
+
+      & > div {
+        margin: 0 auto;
+        text-align: center;
+        max-width: 720px;
+        font-size: 65px;
+        text-transform: uppercase;
+
+        @media (max-width: @screen-xs-max) {
+          font-size: 40px;
+        }
+        @media (max-width: @screen-xs-min) {
+          font-size: 35px;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: @screen-sm-max) {
@@ -221,7 +265,6 @@ p {
     padding-top: @navbar-height;
     min-height: 480px;
   }
-
   .greedy-jumbotron-column {
     padding-top: 0;
     min-height: 0;
@@ -550,6 +593,54 @@ p {
 p.footer-info {
   text-align: center;
   font-size: @font-size-base;
+}
+
+/** Blog Tag Cloud */
+.tag-cloud {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 30px 0;
+  text-align: center;
+
+  ul {
+    .list-inline;
+    margin: 0;
+
+    li {
+      padding: 5px 0;
+    }
+    li::after {
+      content: ' |';
+    }
+    li:last-of-type::after {
+      content: '';
+    }
+  }
+  a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: @font-size-base * 1.1;
+    margin: 0 15px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+    &.active {
+      background-color: black;
+      color: white;
+    }
+  }
+}
+
+/** Blog Item */
+.blog-item {
+  .image-wrapper {
+    background-color: black;
+
+    img {
+      margin: 0 auto;
+    }
+  }
 }
 
 /** Highlight components */
