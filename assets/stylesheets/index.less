@@ -66,6 +66,15 @@ p {
     color: white;
     text-decoration: none;
   }
+  &.button-inverse {
+    background-color: black;
+    color: white;
+
+    &:hover {
+      background-color: inherit;
+      color: inherit;
+    }
+  }
 }
 
 .cv-button {
@@ -212,24 +221,20 @@ p {
 }
 
 /** Greedy Jumbotron (that covers whole viewport) */
-@greedy-jumbotron-min-height: 550px;
-
 .greedy-jumbotron {
   height: 100vh;
-  min-height: @greedy-jumbotron-min-height;
   max-height: 1080px; /* for extremely large displays, like iMac */
   margin-top: -@navbar-height;
   padding-top: 0;
   padding-bottom: 0;
   box-sizing: border-box;
 
-  .container, .row {
+  &> .container, &> .container > .row {
     height: 100%;
   }
 }
 .greedy-jumbotron-column {
   height: 100%;
-  min-height: @greedy-jumbotron-min-height;
   padding-top: @navbar-height;
   box-sizing: border-box;
 
@@ -264,6 +269,7 @@ p {
   .greedy-jumbotron {
     padding-top: @navbar-height;
     min-height: 480px;
+    max-height: none;
   }
   .greedy-jumbotron-column {
     padding-top: 0;
@@ -640,6 +646,53 @@ p.footer-info {
     img {
       margin: 0 auto;
     }
+  }
+}
+
+/** Case study */
+@case-study-jumbotron-min-height: 650px;
+
+.case-study-jumbotron {
+  min-height: @case-study-jumbotron-min-height;
+
+  .greedy-jumbotron-column {
+    display: table;
+    min-height: @case-study-jumbotron-min-height;
+
+    .cell {
+      height: 100%;
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  @media (max-width: @screen-sm-max) {
+    padding-top: @navbar-height;
+    height: auto !important; // an ugly way to override the JavaScript, wasn't able to find any better
+
+    .greedy-jumbotron-column {
+      height: auto !important;
+    }
+  }
+
+  h2 {
+    font-size: 50px;
+    margin: 30px 0;
+  }
+  ul {
+    padding: 0;
+
+    li {
+      list-style-type: none;
+      border-top: 1px solid black;
+      padding: 5px 0;
+    }
+    li:last-of-type {
+      border-bottom: 1px solid black;
+    }
+  }
+  .button {
+    margin-bottom: 30px;
   }
 }
 
