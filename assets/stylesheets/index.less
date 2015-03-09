@@ -76,12 +76,22 @@ p {
     }
   }
 }
-
+.justifyright {
+  text-align: right;
+}
 .cv-button {
   .button;
   width: 80%;
   max-width: 600px;
   margin: 30px auto;
+}
+.anchor {
+  // Because of the fixed navbar anchoring doesn't really work (anchor ends up behind the navbar).
+  // We use this little trick to get around that.
+  display: block;
+  position: relative;
+  top: -60px;
+  visibility: hidden;
 }
 
 /** Helper size indicator */
@@ -157,9 +167,14 @@ p {
 }
 .navbar-button-logo {
   float: left;
+  margin-top: 0;
+  margin-bottom: 0;
 
   &::before {
     height: 20%;
+  }
+  span {
+    display: none;
   }
   img {
     height: 60%;
@@ -646,6 +661,16 @@ p.footer-info {
     img {
       margin: 0 auto;
     }
+  }
+  .blog-readtime {
+    text-transform: uppercase;
+  }
+  .blog-share-buttons a {
+    text-transform: uppercase;
+    color: white;
+    background-color: black;
+    margin-right: 10px;
+    padding: 3px;
   }
 }
 

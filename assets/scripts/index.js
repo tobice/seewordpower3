@@ -9,9 +9,11 @@ require('bootstrap/js/collapse');
 var mattyImage = require('./mattyImage');
 var flexibleHeader = require('./flexibleHeader');
 var greedyJumbotron = require('./greedyJumbotron');
+var navbar = require('./navbar');
 
 $(document).ready(function () {
     mattyImage.init();
     $('nav.navbar').each(flexibleHeader);
     $('.greedy-jumbotron').each(greedyJumbotron);
+    $('#navbar').each(navbar);
 });
