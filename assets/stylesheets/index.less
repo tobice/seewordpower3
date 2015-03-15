@@ -33,6 +33,7 @@ body {
 h1, h2, h3 {
   text-transform: uppercase;
   text-align: center;
+  color: black;
 
   a {
     text-decoration: none;
@@ -66,21 +67,21 @@ p {
     color: white;
     text-decoration: none;
   }
-  &.button-inverse {
-    background-color: black;
-    color: white;
+}
+.button-inverse {
+  background-color: black;
+  color: white;
+  border-color: white;
 
-    &:hover {
-      background-color: inherit;
-      color: inherit;
-    }
+  &:hover {
+    background-color: inherit; // for the colorful jumbotrons
+    color: inherit;
   }
 }
 .justifyright {
   text-align: right;
 }
-.cv-button {
-  .button;
+.button-cv {
   width: 80%;
   max-width: 600px;
   margin: 30px auto;
@@ -230,8 +231,23 @@ p {
     font-size: 1.01 * @font-size-base;
   }
 
+  h2:first-of-type {
+    margin-top: 0;
+  }
+  p:last-of-type {
+    margin-bottom: 0;
+  }
   &.no-margin {
     margin-bottom: 0;
+  }
+
+  &.jumbotron-inverse {
+    background-color: black;
+    color: white;
+
+    a, p, h1, h2, h3 {
+      color: white;
+    }
   }
 }
 
@@ -294,15 +310,6 @@ p {
   }
 }
 
-/** Jumbotron black */
-.jumbotron-inverse {
-  background-color: black;
-  color: white;
-
-  a {
-    color: white;
-  }
-}
 
 /** Jumbotron Matty */
 .jumbotron-matty {
@@ -493,6 +500,15 @@ p {
   text-align: center;
   vertical-align: middle;
 }
+.client-banner-words .wrap div {
+  height: 100%;
+  display: table;
+  vertical-align: middle;
+
+  div {
+    display: table-cell;
+  }
+}
 
 /** Mind challenges (boxes) */
 .mind-challenge {
@@ -657,20 +673,32 @@ p.footer-info {
 .blog-item {
   .image-wrapper {
     background-color: black;
+    height: 250px;
+    padding: 40px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
 
     img {
       margin: 0 auto;
+      height: 100%;
     }
   }
   .blog-readtime {
     text-transform: uppercase;
   }
+  .blog-share-buttons {
+    text-align: center;
+    margin: 30px 0;
+  }
   .blog-share-buttons a {
-    text-transform: uppercase;
-    color: white;
-    background-color: black;
-    margin-right: 10px;
-    padding: 3px;
+    .button;
+    .button-inverse;
+    display: inline;
+    padding: 4px;
+    margin: 0 4px;
+  }
+  .blog-perex {
+    font-size: @font-size-base * 1.2;
   }
 }
 
@@ -693,12 +721,19 @@ p.footer-info {
 
   @media (max-width: @screen-sm-max) {
     padding-top: @navbar-height;
-    height: auto !important; // an ugly way to override the JavaScript, wasn't able to find better
+    height: auto !important; // an ugly way to override the JavaScript, wasn't able to find better one
 
     .greedy-jumbotron-column {
       height: auto !important;
     }
   }
+
+  @media (max-width: @screen-xs-max) {
+    .greedy-jumbotron-column {
+      width: 100%; // stretch the container even when there is no content
+    }
+  }
+
 
   h2 {
     font-size: 50px;
@@ -719,12 +754,59 @@ p.footer-info {
   .button {
     margin-bottom: 30px;
   }
+
+  &.jumbotron-inverse {
+    h2, h3, p {
+      color: white;
+    }
+    ul li {
+      border-color: white;
+    }
+    .button {
+      border-color: white;
+    }
+    .button:hover {
+      background-color: white;
+      color: #000000;
+    }
+  }
 }
 
 /** Image container */
 .image-container {
   width: 100%;
-  overflow-x: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+
+  img {
+    max-width: 100%;
+  }
+  p {
+    text-align: center;
+  }
+}
+
+/** Video container */
+.video-container {
+  // Nice trick to stretch the video to 100% and keep the 16:9 aspect ratio
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  &> div {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+
+    &> iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
 /** Highlight components */
