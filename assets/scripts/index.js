@@ -10,10 +10,12 @@ var mattyImage = require('./mattyImage');
 var flexibleHeader = require('./flexibleHeader');
 var greedyJumbotron = require('./greedyJumbotron');
 var navbar = require('./navbar');
+var clientBanner = require('./clientBanner');
 
 $(document).ready(function () {
     mattyImage.init();
     $('nav.navbar').each(flexibleHeader);
     $('.greedy-jumbotron').each(greedyJumbotron);
     $('#navbar').each(navbar);
+    $('.client-banner').each(clientBanner);
 });
