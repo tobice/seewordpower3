@@ -559,23 +559,23 @@ p {
       }
     }
     .date {
-      width: 50%;
+      width: 50%; // stretch it to move the inner div a little to the left
       float: right;
 
       > div {
-        max-width: 120px;
+        width: 120px;
         height: 120px;
         display: table-cell;
         vertical-align: middle;
         text-align: center;
         box-sizing: border-box;
-        padding: 20px;
+        padding: 0;
         font-size: @font-size-base * 1.1;
         border: 1px solid black;
+      }
 
-        @media (max-width: @screen-sm-max) {
-          float: right;
-        }
+      @media (max-width: @screen-sm-max) {
+        width: auto; // let it deflate so that the inner div would stick to the right side
       }
     }
   }
