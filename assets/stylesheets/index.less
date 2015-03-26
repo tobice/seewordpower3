@@ -718,6 +718,10 @@ p.footer-info {
       height: 100%;
       display: table-cell;
       vertical-align: middle;
+
+      .col-md-6 {
+        margin-bottom: 30px;
+      }
     }
   }
 
@@ -728,6 +732,10 @@ p.footer-info {
     .greedy-jumbotron-column {
       height: auto !important;
     }
+    .cell h2 {
+      margin: 30px 0;
+      font-size: 40px;
+    }
   }
 
   @media (max-width: @screen-xs-max) {
@@ -735,11 +743,15 @@ p.footer-info {
       width: 100%; // stretch the container even when there is no content
     }
   }
+  @media (max-width: @screen-xs-min) {
+    h2 {
+      font-size: 35px;
+    }
+  }
 
 
   h2 {
     font-size: 50px;
-    margin: 30px 0;
   }
   ul {
     padding: 0;
