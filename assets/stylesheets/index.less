@@ -569,7 +569,7 @@ p {
         vertical-align: middle;
         text-align: center;
         box-sizing: border-box;
-        padding: 0;
+        padding: 10px; // to enforce double lines
         font-size: @font-size-base * 1.1;
         border: 1px solid black;
       }
@@ -674,6 +674,8 @@ p.footer-info {
 
 /** Blog Item */
 .blog-item {
+  margin-top: 30px;
+
   .image-wrapper {
     background-color: black;
     height: 250px;
@@ -783,6 +785,47 @@ p.footer-info {
     .button:hover {
       background-color: white;
       color: #000000;
+    }
+  }
+}
+
+/** Blog post jumbotron */
+.blog-post-jumbotron {
+  .case-study-jumbotron;
+
+  h1 {
+    font-size: 50px;
+  }
+  .image-wrapper {
+    width: 80%;
+    margin: 0 auto;
+
+    img {
+      margin: 40px auto;
+      min-height: 300px;
+    }
+  }
+
+  .with-horizontal-separator {
+    width: 80%;
+    margin: 0 auto;
+    height: 30px;
+  }
+
+  @media (max-width: @screen-xs-max) {
+    .image-wrapper {
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+    .with-horizontal-separator {
+      width: 60%;
+      height: 20px;
+    }
+    h1 {
+      font-size: 35px;
     }
   }
 }
